@@ -1,8 +1,9 @@
 import { fastify } from 'fastify'
+import { DatabaseMemory } from './database-memory.js'
 
 const server = fastify()
 
-// GET, POST, PUT, DELETE
+const database = new DatabaseMemory()
 
 
 server.post("/index", () => {
@@ -11,15 +12,15 @@ server.post("/index", () => {
 
 
 server.get("/index", () => {
-    return 'hello world'
+    return 'hello rap'
 })
 
 server.put("/index/:id", () => {
-    return ''
+    return 'hello avestruz'
 })
 
-server.get("/node", () => {
-    return ''
+server.delete("/node/:id", () => {
+    return 'hello avestruz'
 })
 
 server.listen({
