@@ -4,7 +4,7 @@ export class DatabaseMemory{
     #indexes = new Map()
 
     list() {
-        this.#indexes.values()
+        return this.#indexes.values()
     }
 
     create(index) {
