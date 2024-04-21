@@ -5,21 +5,25 @@ const server = fastify()
 
 const database = new DatabaseMemory()
 
-
 server.post("/index", (request, reply) => {
-    database.create({
-        title: 'Index 01',
-        description: 'this is a index'    
-    })// first test
+    const { title, description } = request.body
 
-    console.log(database.list())
+
+    database.create({
+        title,
+        description   
+    })
 
     return reply.status(201).send()
 })
 
 
 server.get("/index", () => {
-    return 'hello rap'
+    const indexes = database.list()
+
+    console.log(indexes)
+
+    return indexes
 })
 
 server.put("/index/:id", () => {
@@ -33,4 +37,3 @@ server.delete("/node/:id", () => {
 server.listen({
     port: 3000,
 })
-// 24:51
