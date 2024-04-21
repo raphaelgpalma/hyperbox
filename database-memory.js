@@ -4,7 +4,15 @@ export class DatabaseMemory{
     #indexes = new Map()
 
     list() {
-        return Array.from(this.#indexes.entries())
+        return Array.from(this.#indexes.entries()).map((indexArray) => {
+            const id = indexArray[0]
+            const data = indexArray[1]
+
+            return {
+                id,
+                ...data,
+            }
+        })
     }
 
     create(index) {
@@ -16,7 +24,7 @@ export class DatabaseMemory{
         this.#indexes.set(id, index)
     }
 
-    update(id) {
+    delete(id) {
         this.#indexes.delete(id)
     }
 } 
