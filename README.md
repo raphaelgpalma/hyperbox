@@ -1,1 +1,1 @@
-# hyperbox
+# hypercube
