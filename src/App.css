@@ -7,8 +7,21 @@
   flex-direction: column;
   font-family: "Nunito", sans-serif;
   background-color:#202422;
+  
+}
+
+.App img {
+  margin-top: 10%;
+  height: 200px;
+  width: 200px;
+
 }
 body {
   padding: 0;
   margin: 0;
+}
+
+#searchbare{
+  height: 30%;
+
 }
