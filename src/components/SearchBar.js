@@ -3,27 +3,15 @@ import "./SearchBar.css";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 
-function SearchBar({ placeholder, data }) {
-  const [filteredData, setFilteredData] = useState([]);
-  const [wordEntered, setWordEntered] = useState("");
-
-  const handleFilter = (event) => {
-    const searchWord = event.target.value;
-    setWordEntered(searchWord);
-    const newFilter = data.filter((value) => {
-      return value.title.toLowerCase().includes(searchWord.toLowerCase());
-    });
-
-    if (searchWord === "") {
-      setFilteredData([]);
-    } else {
-      setFilteredData(newFilter);
-    }
-  };
+function SearchBar({placeholder}) {
+  const [searchValue, setSearchValue] = useState('');
 
   const clearInput = () => {
-    setFilteredData([]);
-    setWordEntered("");
+    setSearchValue('');
+  };
+
+  const handleInputChange = (event) => {
+    setSearchValue(event.target.value);
   };
 
   return (
@@ -32,28 +20,18 @@ function SearchBar({ placeholder, data }) {
         <input
           type="text"
           placeholder={placeholder}
-          value={wordEntered}
-          onChange={handleFilter}
+          value={searchValue}
+          onChange={handleInputChange}
         />
         <div className="searchIcon">
-          {filteredData.length === 0 ? (
+          {searchValue.trim() === '' && (
             <SearchIcon />
-          ) : (
+          )}
+          {searchValue.trim() !== '' && (
             <CloseIcon id="clearBtn" onClick={clearInput} />
           )}
         </div>
       </div>
-      {filteredData.length != 0 && (
-        <div className="dataResult">
-          {filteredData.slice(0, 15).map((value, key) => {
-            return (
-              <a className="dataItem" href={value.link} target="_blank">
-                <p>{value.title} </p>
-              </a>
-            );
-          })}
-        </div>
-      )}
     </div>
   );
 }
