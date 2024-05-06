@@ -1,4 +1,4 @@
-// File: C:\Users\rapha\project\hypercube\app\layout.tsx
+// File: C:\Users\rapha\raphael\hypercube\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

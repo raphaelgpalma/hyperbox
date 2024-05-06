@@ -4,6 +4,11 @@ import Image from 'next/image';
 
 
 const SearchBar = () => {
+
+
+    const search = () =>{
+
+    }
   return (
         
     <div className="mx-auto max-w-7xl sm:px-6 lg:px-8 bg-black">
