@@ -1,6 +1,4 @@
 import React from 'react';
-import Image from "next/image";
-import logoImg from './images/logo.png';
 import SearchBar from './components/searchBar';
 
 export default function Home() {
