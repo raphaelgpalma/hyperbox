@@ -5,7 +5,7 @@ export default function Home() {
   return (
 
     <body className='bg-gray-950'>
-      <div className='min-h-screen'>
+      <div className='min-h-screen overflow-hidden'>
         <SearchBar/>
       </div>
     </body>

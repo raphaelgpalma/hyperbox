@@ -1,4 +1,4 @@
-// File: /home/palma/github/hypercube/app/page.tsx
+// File: C:\Users\rapha\project\hypercube\app\page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
