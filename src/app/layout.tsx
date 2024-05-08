@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <body className="bg-gray-950">
-          <div className="min-h-screen overflow-hidden">
+          <div className="min-h-screen overflow-hidden bg-gray-950">
             <SearchBar />
           </div>
         </body>
